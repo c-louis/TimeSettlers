@@ -5,7 +5,6 @@ var velocity = Vector2(0, 0)
 var speed = 150
 var jumpVelocity = -200
 
-
 func doAction(): # What to do when the action button is pressed
 	pass
 
@@ -49,3 +48,4 @@ func _physics_process(delta):
 		velocity.y += gravity # Apply gravity
 	
 	move_and_slide(velocity, Vector2(0, -1)) # Move based on current velocity
+	
