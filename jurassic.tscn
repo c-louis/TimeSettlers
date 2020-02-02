@@ -1,32 +1,344 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://jurassic/parallax background/plx-1.png" type="Texture" id=1]
 [ext_resource path="res://jurassic/parallax background/plx-2.png" type="Texture" id=2]
 [ext_resource path="res://jurassic/parallax background/plx-3.png" type="Texture" id=3]
 [ext_resource path="res://jurassic/parallax background/plx-4.png" type="Texture" id=4]
 [ext_resource path="res://jurassic/parallax background/plx-5.png" type="Texture" id=5]
+[ext_resource path="res://jurassic/jungle tileset/jungle tileset.png" type="Texture" id=6]
+[ext_resource path="res://player/text.png" type="Texture" id=7]
+[ext_resource path="res://assets/point_text.tres" type="Theme" id=8]
+[ext_resource path="res://jurassic/ Chacter with outline/sprites/jump outline.png" type="Texture" id=9]
+[ext_resource path="res://script/npc.gd" type="Script" id=10]
+[ext_resource path="res://script/player.gd" type="Script" id=11]
+[ext_resource path="res://player/adventurer-Sheet.png" type="Texture" id=12]
+[ext_resource path="res://assets/choose.png" type="Texture" id=13]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 16, 32, 16, 32, 32, 0, 32 )
 
-[node name="plx-1" type="Sprite" parent="."]
-position = Vector2( 511.1, 299.282 )
-scale = Vector2( 2.65841, 2.76573 )
+[sub_resource type="TileSet" id=2]
+1/name = "jungle tileset.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "jungle tileset.png 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 32, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "jungle tileset.png 3"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 64, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "jungle tileset.png 4"
+4/texture = ExtResource( 6 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 32, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "jungle tileset.png 5"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "jungle tileset.png 6"
+6/texture = ExtResource( 6 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 32, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "jungle tileset.png 7"
+7/texture = ExtResource( 6 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 64, 32, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+8/name = "jungle tileset.png 8"
+8/texture = ExtResource( 6 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 288, 192, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+8/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.4855, 59.7355 )
+
+[sub_resource type="Animation" id=4]
+length = 10000.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35, 36, 37 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.9
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.31, 0.38, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17, 18, 19, 20, 21, 17 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 29.6228, 63.6602 )
+
+[node name="main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+light_mask = 131073
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1535.63, 0 )
+
+[node name="plx-1" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
+centered = false
 
-[node name="plx-2" type="Sprite" parent="."]
-position = Vector2( 512.266, 300.449 )
-scale = Vector2( 2.66448, 2.77652 )
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+light_mask = 131073
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1535.63, 0 )
+
+[node name="plx-2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
+centered = false
 
-[node name="plx-3" type="Sprite" parent="plx-2"]
-position = Vector2( 0.437744, -0.210033 )
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 131073
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1535.63, 0 )
+
+[node name="plx-3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
+centered = false
 
-[node name="plx-4" type="Sprite" parent="plx-2/plx-3"]
-position = Vector2( -0.437759, 0.420067 )
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+light_mask = 131073
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 1535.63, 0 )
+
+[node name="plx-4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+centered = false
 
-[node name="plx-5" type="Sprite" parent="."]
-position = Vector2( 512.145, 300.217 )
-scale = Vector2( 2.66752, 2.78192 )
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 131073
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 1535.63, 0 )
+
+[node name="plx-5" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 1441792, 2, 0, 1441793, 2, 0, 1441794, 2, 0, 1441795, 2, 0, 1441796, 2, 0, 1441797, 2, 0, 1441798, 2, 0, 1441799, 2, 0, 1441800, 2, 0, 1441801, 2, 0, 1441802, 2, 0, 1441803, 2, 0, 1441804, 2, 0, 1441805, 2, 0, 1441806, 2, 0, 1441807, 2, 0, 1441808, 2, 0, 1441809, 2, 0, 1441810, 2, 0, 1441811, 2, 0, 1441812, 2, 0, 1441813, 2, 0, 1441814, 2, 0, 1441815, 2, 0, 1441816, 2, 0, 1441817, 2, 0, 1441818, 2, 0, 1441819, 2, 0, 1441820, 2, 0, 1441821, 2, 0, 1441822, 2, 0, 1441823, 2, 0, 1441824, 2, 0, 1441825, 2, 0, 1441826, 2, 0, 1441827, 2, 0, 1441828, 2, 0, 1441829, 2, 0, 1441830, 2, 0, 1441831, 2, 0, 1441832, 2, 0, 1441833, 2, 0, 1441834, 2, 0, 1441835, 2, 0, 1441836, 2, 0, 1441837, 2, 0, 1441838, 2, 0, 1441839, 2, 0, 1441840, 2, 0, 1441841, 2, 0, 1441842, 2, 0, 1441843, 2, 0, 1441844, 2, 0, 1441845, 2, 0, 1441846, 2, 0, 1441847, 2, 0, 1441848, 2, 0, 1441849, 2, 0, 1441850, 2, 0, 1441851, 2, 0, 1441852, 2, 0, 1441853, 2, 0, 1441854, 2, 0, 1441855, 2, 0, 1441856, 2, 0, 1441857, 2, 0, 1441858, 2, 0, 1441859, 2, 0, 1441860, 2, 0, 1441861, 2, 0, 1441862, 2, 0, 1441863, 2, 0, 1441864, 2, 0, 1441865, 2, 0, 1441866, 2, 0, 1441867, 2, 0, 1441868, 2, 0, 1441869, 2, 0, 1441870, 2, 0, 1441871, 2, 0, 1441872, 2, 0, 1441873, 2, 0, 1441874, 2, 0, 1441875, 2, 0, 1441876, 2, 0, 1441877, 2, 0, 1441878, 2, 0, 1441879, 2, 0, 1441880, 2, 0, 1441881, 2, 0, 1441882, 2, 0, 1441883, 2, 0, 1441884, 2, 0, 1441885, 2, 0, 1441886, 2, 0, 1441887, 2, 0, 1441888, 2, 0, 1441889, 2, 0, 1441890, 2, 0, 1441891, 2, 0, 1441892, 2, 0, 1441893, 2, 0, 1441894, 2, 0, 1441895, 2, 0, 1441896, 2, 0, 1441897, 2, 0, 1441898, 2, 0, 1441899, 2, 0, 1441900, 2, 0, 1441901, 2, 0, 1441902, 2, 0, 1441903, 2, 0, 1441904, 2, 0, 1441905, 2, 0, 1441906, 2, 0, 1441907, 2, 0, 1441908, 2, 0, 1441909, 2, 0, 1441910, 2, 0, 1441911, 2, 0, 1441912, 2, 0, 1441913, 2, 0, 1441914, 2, 0, 1441915, 2, 0, 1441916, 2, 0, 1441917, 2, 0 )
+
+[node name="NPC" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 366.277, 645.251 )
+
+[node name="text_box" type="Sprite" parent="NPC"]
+visible = false
+position = Vector2( 86.3669, -59.3008 )
+scale = Vector2( 0.407764, 0.471606 )
+texture = ExtResource( 7 )
+
+[node name="text" type="RichTextLabel" parent="NPC/text_box"]
+margin_left = -314.0
+margin_top = -149.0
+margin_right = 379.0
+margin_bottom = 8.0
+theme = ExtResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+visible_characters = 0
+meta_underlined = false
+scroll_active = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="jump outline" type="Sprite" parent="NPC"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="NPC"]
+space_override = 1
+script = ExtResource( 10 )
+Player = NodePath("../../Player2D")
+TextBox = NodePath("../text_box")
+TextLabel = NodePath("../text_box/text")
+ChooseBox = NodePath("../../GUI/Sprite")
+ChooseLabel = NodePath("../../GUI/Sprite/text")
+text = [ [ "Bonjour voyageur !", "J'ai perdu ma hache dans ce fossé", "<L'aider<1>;Ne pas l'aider<2>>" ], [ "Merci beaucoup !" ], [ "Eh oh c'est pas très gentil ça" ] ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
+scale = Vector2( 6.46, 1 )
+shape = SubResource( 3 )
+
+[node name="Player2D" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 11 )
+
+[node name="Camera" type="Camera2D" parent="Player2D"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 850
+
+[node name="Animator" type="AnimationPlayer" parent="Player2D"]
+autoplay = "idle"
+anims/falling = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/in_air = SubResource( 6 )
+anims/walk = SubResource( 7 )
+
+[node name="Player" type="Sprite" parent="Player2D"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+vframes = 11
+hframes = 7
+frame = 37
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player2D"]
+visible = false
+position = Vector2( 0, 8 )
+shape = SubResource( 8 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="GUI"]
+visible = false
+position = Vector2( 1039.17, 152.091 )
+scale = Vector2( 0.469951, 0.77415 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="text" type="RichTextLabel" parent="GUI/Sprite"]
+margin_left = 46.8511
+margin_top = 40.2566
+margin_right = 739.851
+margin_bottom = 197.257
+theme = ExtResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+meta_underlined = false
+scroll_active = false
+__meta__ = {
+"_edit_group_": true
+}
+[connection signal="body_entered" from="NPC/Area2D" to="NPC/Area2D" method="_on_Area2D_body_entered"]
