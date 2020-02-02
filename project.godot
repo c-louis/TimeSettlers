@@ -19,10 +19,15 @@ config/name="TimeSettlers"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Achievement="*res://Achievement.gd"
+
 [display]
 
 window/size/width=1280
 window/size/height=720
+window/size/resizable=false
 
 [rendering]
 
