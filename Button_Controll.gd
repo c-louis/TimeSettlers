@@ -16,7 +16,7 @@ func _on_Hub_pressed():
 	get_tree().change_scene("res://hub.tscn")
 
 func _on_Start_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://jurassic.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()
