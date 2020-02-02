@@ -80,8 +80,6 @@ __meta__ = {
 }
 
 [node name="Button_Controll" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

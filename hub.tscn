@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://hub.gd" type="Script" id=1]
+[ext_resource path="res://point_text.tres" type="Theme" id=2]
 
 [sub_resource type="GradientTexture" id=1]
 
@@ -11,7 +12,7 @@ font_path = "res://assets/ScreenMatrix.ttf"
 size = 40
 font_data = SubResource( 2 )
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=9]
 default_font = SubResource( 3 )
 
 [sub_resource type="Theme" id=5]
@@ -27,7 +28,7 @@ font_data = SubResource( 6 )
 [sub_resource type="Theme" id=8]
 default_font = SubResource( 7 )
 
-[node name="Control" type="Control"]
+[node name="hub" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -45,7 +46,7 @@ margin_left = 90.0
 margin_top = 376.0
 margin_right = 376.0
 margin_bottom = 418.0
-theme = SubResource( 4 )
+theme = SubResource( 9 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -75,7 +76,7 @@ margin_left = 420.571
 margin_top = 310.702
 margin_right = 706.571
 margin_bottom = 352.702
-theme = SubResource( 4 )
+theme = ExtResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -90,7 +91,7 @@ margin_left = 802.64
 margin_top = 349.802
 margin_right = 1092.64
 margin_bottom = 391.802
-theme = SubResource( 4 )
+theme = ExtResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -105,7 +106,7 @@ margin_left = 800.969
 margin_top = 455.024
 margin_right = 1090.97
 margin_bottom = 497.024
-theme = SubResource( 4 )
+theme = ExtResource( 2 )
 custom_colors/default_color = Color( 0.196078, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -120,7 +121,7 @@ margin_left = 423.292
 margin_top = 410.009
 margin_right = 709.292
 margin_bottom = 452.009
-theme = SubResource( 4 )
+theme = ExtResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -135,7 +136,7 @@ margin_left = -453.865
 margin_top = 371.73
 margin_right = -48.8647
 margin_bottom = 413.73
-theme = SubResource( 4 )
+theme = ExtResource( 2 )
 custom_colors/default_color = Color( 0.14902, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -158,13 +159,15 @@ __meta__ = {
 }
 
 [node name="secret_separator" type="RichTextLabel" parent="."]
-margin_left = 1.12686
-margin_top = 336.778
-margin_right = 343.127
-margin_bottom = 532.778
+margin_left = 1.0
+margin_top = 337.0
+margin_right = 89.0
+margin_bottom = 458.0
 theme = SubResource( 8 )
 custom_colors/default_color = Color( 0, 1, 0.156863, 1 )
+visible_characters = 1
 text = ">"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
