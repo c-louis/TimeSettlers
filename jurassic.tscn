@@ -12,7 +12,7 @@
 [ext_resource path="res://jurassic/ Chacter with outline/sprites/jump outline.png" type="Texture" id=10]
 [ext_resource path="res://npc.gd" type="Script" id=11]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "falling"
 length = 10000.0
 step = 0.01
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "in_air"
 length = 0.9
 step = 0.01
@@ -63,8 +63,7 @@ tracks/0/keys = {
 "values": [ 14, 15, 16, 17, 18, 19, 20, 21, 17 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "walk"
+[sub_resource type="Animation" id=4]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:frame")
@@ -79,13 +78,13 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12, 13 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 29.6228, 63.6602 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 0, 16, 32, 16, 32, 32, 0, 32 )
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=7]
 1/name = "jungle tileset.png 1"
 1/texture = ExtResource( 8 )
 1/tex_offset = Vector2( 0, 0 )
@@ -117,7 +116,7 @@ points = PoolVector2Array( 0, 16, 32, 16, 32, 32, 0, 32 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -198,10 +197,10 @@ limit_bottom = 850
 
 [node name="Animator" type="AnimationPlayer" parent="Player2D"]
 autoplay = "idle"
-anims/falling = SubResource( 6 )
+anims/falling = SubResource( 1 )
 anims/idle = SubResource( 2 )
-anims/in_air = SubResource( 7 )
-anims/walk = SubResource( 3 )
+anims/in_air = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="Player" type="Sprite" parent="Player2D"]
 scale = Vector2( 4, 4 )
@@ -213,7 +212,7 @@ frame = 37
 [node name="Hitbox" type="CollisionShape2D" parent="Player2D"]
 visible = false
 position = Vector2( 0, 8 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
@@ -269,7 +268,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 4 )
+tile_set = SubResource( 7 )
 cell_size = Vector2( 32, 32 )
 collision_use_kinematic = true
 format = 1
@@ -290,8 +289,7 @@ texture = ExtResource( 10 )
 [node name="Area2D" type="Area2D" parent="NPC"]
 space_override = 1
 script = ExtResource( 11 )
-player_path = "../../Player2D"
-text = PoolStringArray( "Salut", "Ca va \?", "Coucou" )
+Player = NodePath("../../Player2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
 scale = Vector2( 6.46, 1 )

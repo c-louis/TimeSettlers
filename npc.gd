@@ -1,18 +1,14 @@
 extends Area2D
 
-export var player_path:String;
-onready var player = get_node(player_path)
+export var Player : NodePath
+onready var body = get_node(Player)
 
-export var text:PoolStringArray;
-
-var dialog = ["Bonjour voyageur !", "J'ai perdu ma hache dans ce fossé"]
+export (Array, String) var text
 var index = 0
 
 func start_dialog():
-	get_node("../text_box")
-	print("hey")
 	pass
 
 func _process(delta):
-	if overlaps_body(player) and Input.is_action_just_pressed("talk"):
+	if overlaps_body(body) and Input.is_action_just_pressed("talk"):
 		start_dialog()
