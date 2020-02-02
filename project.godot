@@ -55,7 +55,6 @@ talk={
 
 2d/cell_size=16
 2d/default_gravity=100
-
 window/size/resizable=false
 
 [rendering]
