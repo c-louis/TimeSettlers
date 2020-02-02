@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://hub.gd" type="Script" id=1]
+[ext_resource path="res://point_text.tres" type="Theme" id=2]
+
+[sub_resource type="GradientTexture" id=1]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/ScreenMatrix.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = SubResource( 2 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 3 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/ScreenMatrix.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 150
+font_data = SubResource( 6 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
+
+[node name="hub" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 160.813, 360.909 )
+scale = Vector2( 1.14819, 767.156 )
+texture = SubResource( 1 )
+
+[node name="paleo" type="RichTextLabel" parent="."]
+margin_left = 90.0
+margin_top = 376.0
+margin_right = 376.0
+margin_bottom = 418.0
+theme = SubResource( 9 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Paleolithic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="suicidal" type="RichTextLabel" parent="."]
+margin_left = 797.395
+margin_top = 235.881
+margin_right = 1083.4
+margin_bottom = 277.881
+theme = SubResource( 5 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Suicidal Sect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="roman" type="RichTextLabel" parent="."]
+margin_left = 420.571
+margin_top = 310.702
+margin_right = 706.571
+margin_bottom = 352.702
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Roman Empire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ww2" type="RichTextLabel" parent="."]
+margin_left = 802.64
+margin_top = 349.802
+margin_right = 1092.64
+margin_bottom = 391.802
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "2nd WorldWar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="victory" type="RichTextLabel" parent="."]
+margin_left = 800.969
+margin_top = 455.024
+margin_right = 1090.97
+margin_bottom = 497.024
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0.196078, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Victory"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="magic_roman" type="RichTextLabel" parent="."]
+margin_left = 423.292
+margin_top = 410.009
+margin_right = 709.292
+margin_bottom = 452.009
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Magic Roman"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="flat" type="RichTextLabel" parent="."]
+margin_left = -453.865
+margin_top = 371.73
+margin_right = -48.8647
+margin_bottom = 413.73
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0.14902, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+text = "Flat Earth Secret"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator" type="RichTextLabel" parent="."]
+margin_left = 326.813
+margin_top = 331.767
+margin_right = 668.813
+margin_bottom = 527.767
+theme = SubResource( 8 )
+custom_colors/default_color = Color( 0, 1, 0.156863, 1 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="secret_separator" type="RichTextLabel" parent="."]
+margin_left = 1.0
+margin_top = 337.0
+margin_right = 89.0
+margin_bottom = 458.0
+theme = SubResource( 8 )
+custom_colors/default_color = Color( 0, 1, 0.156863, 1 )
+visible_characters = 1
+text = ">"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator2" type="RichTextLabel" parent="."]
+margin_left = 704.997
+margin_top = 372.579
+margin_right = 1047.0
+margin_bottom = 568.579
+theme = SubResource( 8 )
+custom_colors/default_color = Color( 0, 1, 0.156863, 1 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator3" type="RichTextLabel" parent="."]
+margin_left = 707.718
+margin_top = 259.667
+margin_right = 1049.72
+margin_bottom = 455.667
+theme = SubResource( 8 )
+custom_colors/default_color = Color( 0, 1, 0.156863, 1 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
