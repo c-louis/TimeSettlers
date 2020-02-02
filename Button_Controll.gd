@@ -12,5 +12,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Hub_pressed():
+	get_tree().change_scene("res://hub.tscn")
+
+func _on_Start_pressed():
+	pass # Replace with function body.
+
+func _on_exit_pressed():
+	get_tree().quit()

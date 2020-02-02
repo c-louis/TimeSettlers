@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Jungle Roar Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://Button_Controll.gd" type="Script" id=3]
 [ext_resource path="res://GUI_buttons.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -81,6 +82,7 @@ __meta__ = {
 [node name="Button_Controll" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -117,3 +119,6 @@ text = "exit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Button_Controll/Hub" to="Button_Controll" method="_on_Hub_pressed"]
+[connection signal="pressed" from="Button_Controll/Start" to="Button_Controll" method="_on_Start_pressed"]
+[connection signal="pressed" from="Button_Controll/exit" to="Button_Controll" method="_on_exit_pressed"]
