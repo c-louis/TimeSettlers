@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="TimeSettlers"
-run/main_scene="res://jurassic.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Achievement="*res://Achievement.gd"
 
 [display]
 
@@ -51,6 +55,8 @@ talk={
 
 2d/cell_size=16
 2d/default_gravity=100
+
+window/size/resizable=false
 
 [rendering]
 
